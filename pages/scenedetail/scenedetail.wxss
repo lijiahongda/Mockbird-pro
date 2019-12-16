@@ -1,0 +1,179 @@
+/* pages/scenedetail/scenedetail.wxss */
+
+.yp_moviedetail {
+  display: flex;
+  justify-content: center;
+  padding: 30rpx 10rpx 10rpx 10rpx;
+}
+
+.yp_moviedimg {
+  width: 210rpx;
+  height: 290rpx;
+}
+
+.yp_moviedtext {
+  width: 450rpx;
+  margin-left: 20rpx;
+}
+
+.yp_moviedtext_name {
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+
+.yp_moviedtext_ename {
+  font-size: 24rpx;
+  font-weight: 600;
+  line-height: 38rpx;
+}
+
+.yp_moviedtext_sgg {
+  font-size: 26rpx;
+  /* font-weight: Medium; */
+  line-height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.yp_moviedtext_scnum {
+  font-size: 26rpx;
+  /* font-weight: Medium; */
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.yp_alias {
+  font-size: 32rpx;
+  font-weight: 600;
+  line-height: 90rpx;
+}
+
+.yp_address {
+  font-size: 26rpx;
+  /* line-height: 80rpx; */
+}
+
+.yp_zengss_zengk {
+  display: inline-block;
+  width: 60rpx;
+  height: 40rpx;
+  color: #fff;
+  background: #f66;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+}
+
+.yp_zengss {
+  font-size: 26rpx;
+  font-weight: 600;
+  margin-left: 10rpx;
+}
+
+.yp_pintbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ct_title {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.ct_titleimg {
+  width: 60rpx;
+  height: 28rpx;
+  margin-top: 10rpx;
+}
+
+.ct_titletxt {
+  font-size: 30rpx;
+  line-height: 52rpx;
+  font-weight: 600;
+  margin-left: 5rpx;
+}
+
+.ct_txt {
+  font-size: 24rpx;
+  text-indent: -15rpx;
+  margin-left: 1em;
+}
+
+.ct_padding {
+  padding: 10rpx 20rpx;
+}
+
+/* new */
+
+.yp_cant_btn {
+  background: orange;
+  color: #fff;
+  padding: 5rpx;
+  border-radius: 5rpx;
+}
+
+/* btn */
+
+.yp_bom_btnbox {
+  background: #fff;
+  padding: 20rpx 10rpx;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.yp_shopbtn {
+  width: 100%;
+  font-size: 32rpx;
+  line-height: 90rpx;
+  margin: 0 5rpx;
+  text-align: center;
+  background: linear-gradient(to right, #ff8c19, #ff5d1d);
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.yp_shopbtnrg {
+  width: 100%;
+  margin: 0 5rpx;
+  text-align: center;
+  background: linear-gradient(to right, #ff8c19, #ff5d1d);
+  color: #fff;
+  padding: 20rpx;
+  border-radius: 10rpx;
+}
+
+.yp_shopbtnrg_xt {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+
+.yp_shopbtnrg_xz {
+  font-size: 24rpx;
+}
+
+.yp_tuican {
+  background: #fff;
+  padding: 10rpx 30rpx 5rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  bottom: 156rpx;
+  right: 0;
+}
+
+.t_btncan {
+  width: 120rpx;
+  height: 50rpx;
+  background: orange;
+  text-align: center;
+  line-height: 50rpx;
+  border-radius: 10rpx;
+  color: #fff;
+}

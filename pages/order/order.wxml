@@ -1,0 +1,81 @@
+<!-- 过滤 -->
+<wxs module="numFr" src="../../filter/numFr.wxs"></wxs>
+<!-- 头像组 -->
+<view style="padding:5rpx 30rpx;position:relative;background:#fff;" wx:if="{{oderobject.groupteamId!=null}}">
+  <view class="cu-avatar-group">
+    <view class="cu-avatar round lg" wx:for="{{ctuserlist}}" wx:key="{{item}}" style="background-image:url({{item.imgUrl}});"></view>
+  </view>
+  <view class="avatr_time">三人成团，剩余{{ctuserlist[0].endTime}}</view>
+</view>
+<!-- 影片头 -->
+<view class='padding' style='position:relative;'>
+  <image wx:if="{{ oderobject.picture }}" class="oderbackground" src="{{ oderobject.picture }}" mode="aspectFill" lazy-load="true" />
+  <view class="yp_order_bg yp_order_bg_blur"></view>
+  <view class='oderct_title'>{{oderobject.movieName}}</view>
+  <view class='oderct_title margin-top'>{{oderobject.englishName}}</view>
+  <view class='text-white margin-top'>{{oderobject.name}}</view>
+  <view class='text-white margin-top'>{{oderobject.address}}</view>
+</view>
+
+<!-- 购买数量 -->
+<view class="cu-bar bg-white" style='height:165rpx;'>
+  <view class="action">购买数量</view>
+  <view style='margin-right:30rpx;'>
+    <wux-input-number color="dark" value="{{maynumber}}" bind:change="updateNumber" min="{{ nobusnumber }}" max="{{4}}" slot="footer" />
+  </view>
+  <view style='position:absolute;bottom:5rpx;right:80rpx;'>还剩{{surplusNum-maynumber}}张票</view>
+</view>
+
+<!-- 购票人信息 -->
+<view class="cu-bar bg-white">
+  <view class="action">购票人信息</view>
+</view>
+<view class="cu-form-group">
+  <view class="title">姓名</view>
+  <input placeholder="购票人姓名" value="{{mayname}}" data-name='mayname' bind:change="updateName"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title">手机</view>
+  <input placeholder="购票人手机号码" maxlength="11" value="{{mayphone}}" type="number" data-name='mayphone' bindblur="phoneonchange" bind:change="updatePhone"></input>
+</view>
+
+<!-- 优惠券 -->
+<view class="cu-bar bg-white margin-top solid-bottom" wx:if="{{oderobject.actYpe==0}}">
+  <view class="action">优惠券</view>
+  <view class='action' bindtap='showCoun'>
+    <text class='red_txt' style="margin-right: 15rpx;" wx:if="{{couponList==null}}">暂无可用券</text>
+    <text class='red_txt' style="margin-right: 15rpx;" wx:if="{{couponList!=''}}">{{couponList[idx].remark}}</text>
+    <!-- <text class="cuIcon-right lg text-gray"></text> -->
+    <text class="cuIcon-right text-gray" wx:if="{{!showCup}}"></text>
+    <text class="cuIcon-unfold text-gray" wx:if="{{showCup}}"></text>
+  </view>
+</view>
+<view class='bg-white padding'>
+  <view class='coupon_box' wx:if="{{showCup}}">
+    <button class="coupon_item {{index==idx?'_left':'left'}}" disabled="{{item.type==2&&maynumber<2}}" wx:for="{{couponList}}" wx:key="index" data-index="{{index}}" data-item="{{item}}" bindtap='goIndex'>
+      <view style='width:400rpx;line-height:80rpx;float:right;'>
+        <text class='you_quan_txt' wx:if='{{index==idx}}'>已用</text>
+        <text class='you_quan_txt' wx:if='{{item.type==2&&index!=idx&&maynumber<2}}'>不可用</text>
+        <text class='you_quan_txt'>{{item.remark}}</text>
+      </view>
+    </button>
+  </view>
+  <view class="text-right quan_txt">共{{maynumber}}张电影票
+    <text class='red_txt'>{{numFr.getNum(oderobject.amount*maynumber,2)}}</text>元 </view>
+  <view class="text-right quan_txt" wx:if="{{oderobject.actYpe==4}}">团购抵扣
+    <text class='red_txt'>{{-playmoney}}</text>元 </view>
+  <view class="text-right quan_txt" wx:if="{{oderobject.actYpe==1}}">砍价抵扣
+    <text class='red_txt'>{{-kanmoney}}</text>元 </view>
+  <view class="text-right quan_txt" wx:if="{{couponif}}">优惠券
+    <text class='red_txt'>-{{couponmoney}}</text>元 </view>
+  <view class="text-right quan_txt" style='font-size:35rpx;'>合计
+    <text class='red_txt'>{{numFr.getNum(oderobject.amount*maynumber-couponmoney-playmoney,2)}}</text>元 </view>
+</view>
+
+
+<view class='cu-tabbar-height'></view>
+<view class='cu-tabbar-height'></view>
+<!-- 支付 -->
+<view class="yp_bom_mbtnbox">
+  <view class="yp_goshopbtn" bindtap='goPayto'>立即支付</view>
+</view>

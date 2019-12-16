@@ -1,0 +1,161 @@
+/* pages/scene/scene.wxss */
+
+.yp_banner {
+  position: relative;
+}
+
+/* 城市定位 */
+
+.scene_loaction {
+  position: absolute;
+  top: 10rpx;
+  left: 10rpx;
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: 600;
+  line-height: 30px;
+  border-radius: 30rpx;
+  padding: 0rpx 10rpx 0 20rpx;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.yp_nav {
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  table-layout: fixed;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.page-group-position {
+  position: fixed;
+  z-index: 999;
+}
+
+.yp_navitem {
+  width: 240rpx;
+  height: 100rpx;
+  display: inline-block;
+  line-height: 90rpx;
+  text-align: center;
+  margin: 0 10rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  position: relative;
+}
+
+.yp_vavt_img {
+  width: 90rpx;
+  height: 10rpx;
+  background-image: url(http://img.mockbird.top/1568860473593724.png);
+  background-size: 100% 100%;
+  /* position: absolute;
+  bottom: 0;
+  left: 25rpx; */
+  margin: 0 auto;
+}
+
+.yp_cold {
+  font-size: 35rpx;
+  background: linear-gradient(to right, #ff9019, #ff581e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.yp_scene {
+  padding: 10rpx 30rpx;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.yp_scene_img {
+  width: 100%;
+  height: 340rpx;
+}
+
+.yp_scene_txt {
+  position: relative;
+  padding: 10rpx;
+}
+
+.yp_scene_mname {
+  color: #000;
+}
+
+.mname_title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #000;
+  line-height: 90rpx;
+}
+
+.mname_zeng {
+  display: inline-block;
+  width: 60rpx;
+  height: 40rpx;
+  color: #fff;
+  background: #f66;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+
+.mname_kan {
+  display: inline-block;
+  width: 60rpx;
+  height: 40rpx;
+  color: #fff;
+  background: #f90;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+
+.mname_tuan {
+  display: inline-block;
+  width: 60rpx;
+  height: 40rpx;
+  color: #fff;
+  background: #64b6f6;
+  text-align: center;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+  margin-left: 10rpx;
+}
+
+.yp_scene_dtxt {
+  font-size: 24rpx;
+  color: #222;
+}
+
+.yp_scene_opo {
+  position: absolute;
+  top: 30rpx;
+  right: 10rpx;
+  color: #222;
+  font-size: 24rpx;
+}
+
+.yp_scene_money {
+  position: absolute;
+  bottom: 5rpx;
+  right: 10rpx;
+  color: #222;
+  font-size: 24rpx;
+}
+
+.yp_redtxt {
+  color: #f00;
+  font-weight: Bold;
+  font-size: 36rpx;
+  margin-right: 8rpx;
+}

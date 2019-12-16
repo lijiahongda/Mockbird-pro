@@ -1,0 +1,123 @@
+/* pages/order/order.wxss */
+
+.avatr_time {
+  position: absolute;
+  top: 35rpx;
+  right: 30rpx;
+}
+
+.oderbackground {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1000;
+  /* filter: blur(8rpx); */
+}
+
+.yp_order_bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* filter: blur(100rpx); *//* -webkit-filter: blur(10px); *//* -moz-filter: blur(15px);
+  -o-filter: blur(15px);
+  -ms-filter: blur(15px); */
+}
+
+.yp_order_bg_blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  z-index: -10;
+}
+
+.oderct_title {
+  color: #fff;
+  font-weight: 900;
+  font-size: 40rpx;
+}
+
+.yp_bom_mbtnbox {
+  background: #fff;
+  padding: 20rpx 10rpx;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.yp_goshopbtn {
+  width: 100%;
+  font-size: 32rpx;
+  line-height: 90rpx;
+  font-weight: 600;
+  text-align: center;
+  background: linear-gradient(to right, #ff8c19, #ff5d1d);
+  color: #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+/* 优惠券 */
+
+.coupon_box {
+  text-align: right;
+  line-height: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+/* .coupon_item {
+  width: 60%;
+  border-bottom: 1rpx solid #dcdcdc;
+} */
+
+.active, ._left {
+  color: #ff9019;
+}
+
+.you_quan_txt {
+  width: 200rpx;
+  display: inline-block;
+}
+
+.quan_txt {
+  line-height: 50rpx;
+}
+
+.red_txt {
+  color: red;
+}
+
+button::after {
+  border: none;
+}
+
+button {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  font-size: 25rpx;
+  text-align: right;
+  text-decoration: none;
+  line-height: 2.55555556;
+  border-radius: 0;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  color: #6f7281;
+  background-color: #fafafa;
+}

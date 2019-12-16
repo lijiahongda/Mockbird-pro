@@ -1,0 +1,31 @@
+<!--pages/numshopdetail/numshopdetail.wxml-->
+<view class="getbuy">
+  <view class="getbuy_img">
+    <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575435121839638.png"></image>
+    <view class="getbuy_itxta">{{shopnumlist.goodsBrief}}</view>
+    <view class="getbuy_itxtb">{{shopnumlist.goodsDesc}}</view>
+  </view>
+</view>
+<view class="bg-white padding">
+  <view class="getbuy_one">
+    <text style="color:#FF4C00;font-size:52rpx;font-weight:600;">{{shopnumlist.unitPrice}}</text>
+    积分
+  </view>
+  <view class="getbuy_two">{{shopnumlist.goodsDesc}}{{shopnumlist.name}}</view>
+</view>
+
+<view class="bg-white padding">
+  <view class="getbuy_three">使用条件</view>
+  <view class="getbuy_four">1、观影订单立减；</view>
+  <view class="getbuy_four">2、每个用户每月仅可兑换1次；</view>
+  <view class="getbuy_four">3、兑换后，优惠券可在“我的-优惠券”页面查看</view>
+  <view class="getbuy_three">使用范围</view>
+  <view class="getbuy_four">1、观影订单立减；</view>
+  <view class="getbuy_four">2、每个用户每月仅可兑换1次；</view>
+  <view class="getbuy_four">3、兑换后，优惠券可在“我的-优惠券”页面查看</view>
+  <view class="getbuy_three">优惠券有效期</view>
+  <view class="getbuy_four">自兑换当日起30日内使用</view>
+</view>
+
+<view class="getbuy_btn" bindtap="getbuyGoods" wx:if="{{shopnumlist.unitPrice}}">{{shopnumlist.unitPrice}}积分兑换</view>
+<!-- <view class="getbuy_btnd"></view> -->

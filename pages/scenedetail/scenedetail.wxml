@@ -1,0 +1,120 @@
+<view class="yp_moviedetail bg-white">
+  <view class="yp_moviedimg">
+    <image style="width:100%;height:100%;border-radius:10rpx;" src="{{scenedList.picture}}"></image>
+  </view>
+  <view class="yp_moviedtext">
+    <view class="yp_moviedtext_name">{{scenedList.movieName}}</view>
+    <view class="yp_moviedtext_ename">{{scenedList.englishName}}</view>
+    <view class="yp_moviedtext_sgg">排映场次（除特殊影厅）均可观看</view>
+    <view class="yp_moviedtext_scnum" wx:if="{{surplusNum>0}}">已售{{buyNum}}张，剩余{{surplusNum}}张</view>
+    <view class="yp_moviedtext_scnum" wx:if="{{surplusNum==0}}">已售罄</view>
+  </view>
+</view>
+
+
+<view class="bg-white padding">
+  <view class="text-left">
+    <text class='yp_alias'>{{ scenedList.alias}}</text>
+  </view>
+  <view class="text-left">
+    <text class='yp_address'>{{ scenedList.address}}</text>
+  </view>
+  <!-- <view class="text-left">
+    <text class='yp_address'>{{gropEndtim}}</text>
+  </view> -->
+  <view class="text-left" wx:if="{{scenedList.activityType==2||scenedList.activityType==3}}">
+    <text class="yp_zengss_zengk">赠</text>
+    <text class='yp_zengss'>前50名购票用户奖获得精美衍生品1份</text>
+  </view>
+</view>
+
+<view class="bg-white padding yp_pintbox" wx:if="{{scenedList.activityType==4&&tuanUlist[0].teamId!=null}}">
+  <view style="font-size: 30rpx;font-weight: 600;">{{tuanUlist.length}}人在拼团，可直接参与</view>
+  <view>
+    <text>查看全部</text>
+    <text class="cuIcon-right text-gray"></text>
+  </view>
+</view>
+<view class="cu-list menu-avatar" wx:if="{{scenedList.activityType==4&&tuanUlist[0].teamId!=null}}">
+  <view class="cu-item" wx:for="{{tuanUlist}}" data-item="{{item}}" wx:key="{{index}}">
+    <view class="cu-avatar round lg">
+      <image class="arva_bgimg" src="{{item.imgUrl}}"></image>
+    </view>
+    <view class="content">
+      <view class="text-grey">{{item.userName}}</view>
+    </view>
+    <view style="width:240rpx;">
+      <view class="text-grey text-xs">还差{{item.surplusNum}}人拼成</view>
+      <view class="text-grey text-xs">剩余{{item.endTime}}</view>
+      <!-- <view class="cu-tag">剩余14:30:03</view> -->
+    </view>
+    <view class="action">
+      <view class="text-grey yp_cant_btn" data-item="{{item}}" bindtap="goOrderusgoing">参团</view>
+    </view>
+  </view>
+</view>
+
+<view class="bg-white padding">
+  <view class='text-left ct_title'>
+    <view class="ct_titleimg">
+      <image style="width:100%;height:100%;" src="http://img.mockbird.top/1568975293959552.png"></image>
+    </view>
+    <view class="ct_titletxt">流程</view>
+  </view>
+  <view class="guize_box">
+    <view class="text-left ct_padding ct_txt" wx:for="{{poRule}}" wx:key="{{index}}">{{item}}</view>
+  </view>
+</view>
+
+<view class="bg-white padding">
+  <view class='text-left ct_title'>
+    <view class="ct_titleimg">
+      <image style="width:100%;height:100%;" src="http://img.mockbird.top/1570591378603034.png"></image>
+    </view>
+    <view class="ct_titletxt">须知</view>
+  </view>
+  <view class="guize_box">
+    <view class="text-left ct_padding ct_txt" wx:for="{{poTip}}" wx:key="{{index}}">{{item}}</view>
+  </view>
+</view>
+
+<view class='cu-tabbar-height'></view>
+<view class='cu-tabbar-height'></view>
+
+
+<!-- tui -->
+<view class="yp_tuican" wx:if="{{scenedList.activityType==4&&tuanUlist[0].teamId!=null}}">
+  <view class="cu-avatar-group">
+    <view class="cu-avatar round sm">
+      <image class="arva_bgimg" src="{{tuanUlist[0].imgUrl}}"></image>
+    </view>
+  </view>
+  <view style="line-height:50rpx;">剩余{{tuanUlist[0].endTime}},还差{{tuanUlist[0].surplusNum}}人</view>
+  <view class="t_btncan" bindtap="goOrderus">参团</view>
+</view>
+<!-- btn -->
+<view class="yp_bom_btnbox" wx:if="{{surplusNum>0}}">
+  <view class="yp_shopbtnrg" bindtap="goshare" wx:if="{{(actYpe==1||actYpe==3)&&kanUlist.userBargainInfoVo.status!=4}}">
+    <view class="yp_shopbtnrg_xt" wx:if="{{kanUlist.userBargainInfoVo.status==1}}">低价观影</view>
+    <view class="yp_shopbtnrg_xt" wx:if="{{kanUlist.userBargainInfoVo.status==3}}">{{kanUlist.bargainActitvty.floorPrice}}元观影</view>
+    <view class="yp_shopbtnrg_xz" wx:if="{{kanUlist.userBargainInfoVo.status==1}}">最低{{kanUlist.bargainActitvty.floorPrice}}元</view>
+    <view class="yp_shopbtnrg_xt" wx:if="{{kanUlist.userBargainInfoVo.status==2}}">已砍{{kanUlist.userBargainInfoVo.total}}元</view>
+    <view class="yp_shopbtnrg_xz" wx:if="{{kanUlist.userBargainInfoVo.status==2||kanUlist.userBargainInfoVo.status==3}}">{{kanUlendtime}}后失效</view>
+  </view>
+  <view class="yp_shopbtnrg" wx:if="{{actYpe==4}}" bindtap="goOrderusfa">
+    <view class="yp_shopbtnrg_xt">发起团购￥{{tuanUlist[0].floorPrice-tuanUlist[0].discountPrice}}元</view>
+    <view class="yp_shopbtnrg_xz">{{tuanUlist[0].groupNum}}人成团</view>
+  </view>
+  <view class="yp_shopbtn" style="font-weight: 600;" bindtap='goOrder'>￥{{scenedList.amount}}立即支付</view>
+</view>
+
+
+<!-- 登录 -->
+<view class="login_zhezhao" wx:if="{{ifLogin=='false'}}">
+  <view class="login_box">
+    <view class="login_header">您还未登录</view>
+    <button class="good_loginto" open-type="getUserInfo" bind:getuserinfo="getUserInfo">立即登录</button>
+    <button class="not_loginto" bindtap='editLogin'>暂不登录</button>
+    <view class="login_footer">请先进行登录操作</view>
+  </view>
+</view>

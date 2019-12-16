@@ -1,0 +1,21 @@
+<view class="bg-white padding">
+  <view class="getbuy_three">连续签到奖励:</view>
+  <view class="getbuy_four">① 连续签到7天：奖励1张5元立减券；</view>
+  <view class="getbuy_four">② 连续签到14天：奖励一张5元立减券，奖励50积分；</view>
+  <view class="getbuy_four">③ 连续签到21天：奖励一张5元立减券，奖励100积分，奖励一张补签卡；</view>
+  <view class="getbuy_four">④ 连续签到28天：奖励一张免费观影券，奖励100积分；</view>
+  <view class="getbuy_four">⑤ 连续签到满月：奖励100积分，奖励一张补签卡；</view>
+  <view class="getbuy_three">累计签到奖励:</view>
+  <view class="getbuy_four">① 连续签到5天：奖励50积分；</view>
+  <view class="getbuy_four">② 连续签到10天：奖励50积分；</view>
+  <view class="getbuy_four">③ 连续签到15天：奖励100积分；</view>
+  <view class="getbuy_four">· 以上签到奖励须在签到页自动领取；</view>
+  <view class="getbuy_four">· 每月1日开始新的一轮签到，每个签到的任务奖励每月仅限领取一次，满足资格的用户需要在当日内领取相应奖励，逾期不可以领取；</view>
+  <view class="getbuy_four">· 如签到中断，则连续签到记录将重新开始计算；</view>
+  <view class="getbuy_four">· 累计签到每月清零1次；</view>
+  <view class="getbuy_four">· 补签卡长期有效；</view>
+  <view class="getbuy_three">分享订单:</view>
+  <view class="getbuy_four">· 有购买成功的订单可见该任务，完成所有可分享的订单分享后，状态变更为已完成；</view>
+  <view class="getbuy_three">瓜分红包:</view>
+  <view class="getbuy_four">· 每个用户每周可发起一次瓜分红包的邀请；</view>
+</view>

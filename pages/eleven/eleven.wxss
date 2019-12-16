@@ -1,0 +1,21 @@
+/* pages/eleven/eleven.wxss */
+
+.eleven_box {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.eleven_image {
+  width: 100%;
+  height: 1852rpx;
+}
+
+.eleven_btn {
+  width: 90%;
+  height: 138rpx;
+  position: absolute;
+  top: 1140rpx;
+  left: 5%;
+}

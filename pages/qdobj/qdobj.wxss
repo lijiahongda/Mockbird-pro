@@ -1,0 +1,17 @@
+/* pages/qdobj/qdobj.wxss */
+
+.getbuy_three {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #000;
+  padding: 10rpx;
+  line-height: 60rpx;
+}
+
+.getbuy_four {
+  font-size: 24rpx;
+  line-height: 50rpx;
+  padding-left: 10rpx;
+  margin-left: 1em;
+  /* text-indent: 0rpx; */
+}

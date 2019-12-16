@@ -1,0 +1,50 @@
+<view class='contentyp'>
+  <view wx:for="{{orderListPay}}" wx:key="{{orderListPay}}">
+    <view class='order_item'>
+      <view class="cu-bar bg-white margin-top">
+        <view class="action">
+          总价:{{item.amount}}元
+        </view>
+        <view class="action text-black" wx:if="{{item.payStatus==1}}">
+          待支付
+        </view>
+        <view class="action text-black" wx:if="{{item.status==3&&item.teamId==null&&item.payStatus==2}}">
+          购买成功
+        </view>
+        <view class="action text-black" wx:if="{{item.status==3&&item.teamId!=null&&item.payStatus==2}}">
+          已成团
+        </view>
+        <view class="action text-black" wx:if="{{item.status==2&&item.teamId!=null&&item.payStatus==2}}">
+          未成团,已退款
+        </view>
+        <view class="action text-black" wx:if="{{item.status==5&&item.payStatus==2}}">
+          已结束
+        </view>
+      </view>
+      <view class='movie_list_box' data-item='{{item}}' bindtap='goOrderdetail'>
+        <view class='movie_img_box'>
+          <image src='{{item.picture}}' mode="aspectFill" lazy-load="true"></image>
+        </view>
+        <view class='movie_list_txtbox'>
+          <view class='item-title'>{{item.movieName}}（{{item.buyNum}}张）</view>
+          <view class='item-txt'>{{item.cinemaName}}</view>
+          <view class='item-txt'>{{item.address}}</view>
+        </view>
+        <view style="height:150rpx;">
+          <view class='movie-btn' wx:if="{{item.payStatus==2&&item.status==3}}" data-item='{{item}}' catchtap='goLookcode'>查看取票码</view>
+          <view class='movie-btn' wx:if="{{item.payStatus==1}}" data-item='{{item}}' catchtap='goOrderdetail'>立即支付</view>
+          <!-- <view class='movie-btnb' wx:if="{{item.payStatus==2&&item.status<4}}" data-item='{{item}}' catchtap='goScenedetail' style="margin-top:15rpx;">再次购买</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</view>
+
+<!-- 暂无数据 -->
+<view wx:if="{{orderListPay==''}}">
+  <view class='zanwu-img'>
+    <image style='width:100%;height:100%;' mode="aspectFit" lazy-load="true" src='http://img.mockbird.top/1561570665498850.png'></image>
+  </view>
+  <view class='zanwu'>您还没有订单呢!</view>
+</view>

@@ -1,0 +1,11 @@
+<view class="bg-white padding">
+  <view class="grid margin-bottom text-center yp_jus">
+    <view class="yp_movie_padding bg-white shadow-warp" wx:for="{{movieList}}" wx:key="{{item}}" data-item="{{item}}" bindtap="goMoviedetail">
+      <view class="yp_movie_video">
+        <image style='width:100%;height:100%;border-radius:10rpx;' src="{{item.picture}}"></image>
+      </view>
+      <view class="yp_movie_moviename">{{ item.name }}</view>
+      <view class="yp_movie_moviename">{{ item.performer }}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,81 @@
+<scroll-view scroll-y class="scrollPage bg-white">
+  <!-- 轮播 -->
+  <view class="yp_banner">
+    <swiper style="height: 268rpx;" class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+      <swiper-item wx:for="{{swiperList}}" wx:key="{{item}}">
+        <view style="width:100%;height:100%;" data-item="{{item}}" bindtap="goBanner">
+          <image src="{{item.showimg}}" mode="aspectFill"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+    <view class='scene_loaction' bindtap="goLoaction">
+      <text class="text-white">{{globalcity}}</text>
+      <text class="cuIcon-unfold text-white"></text>
+    </view>
+  </view>
+
+  <!-- 导航 -->
+  <view class="yp_nav">
+    <view class="yp_navitem" bindtap="tNavtaba">
+      <text class="yp_vavtxt {{TabCur==3?'yp_cold':''}}">进行中</text>
+      <view class="yp_vavt_img" wx:if="{{TabCur==3}}"></view>
+    </view>
+    <view class="yp_navitem" bindtap="tNavtabb">
+      <text class="yp_vavtxt {{TabCur==5?'yp_cold':''}}">已结束</text>
+      <view class="yp_vavt_img" wx:if="{{TabCur==5}}"></view>
+    </view>
+  </view>
+
+
+
+  <view class="bg-white">
+    <block wx:if="{{TabCur==3}}">
+      <view class="yp_scene" wx:for="{{cinameList}}" data-item="{{item}}" wx:key="{{index}}" bindtap='goScenelist'>
+        <view class="yp_scene_img">
+          <image style="width:100%;height:100%;border-radius: 10rpx;" src="{{item.poster}}" mode="aspectFill"></image>
+        </view>
+        <view class="yp_scene_txt">
+          <view class="yp_scene_mname">
+            <text class="mname_title">{{item.movieName}}</text>
+            <text class="mname_kan" wx:if="{{item.activityType==1||item.activityType==3||item.activityType==6}}">砍</text>
+            <text class="mname_zeng" wx:if="{{item.activityType==2||item.activityType==3}}">赠</text>
+            <text class="mname_tuan" wx:if="{{item.activityType==4||item.activityType==6||item.activityType==7}}">团</text>
+          </view>
+          <view class="yp_scene_dtxt">排映场次(特殊影厅除外)</view>
+          <view class="yp_scene_opo">{{item.cinemaNum}}家影院在售</view>
+          <view class="yp_scene_money">
+            <text class="yp_redtxt">{{item.amount}}</text>元起</view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:if="{{TabCur==5}}">
+      <view class="yp_scene" wx:for="{{cinameList}}" data-item="{{item}}" wx:key="{{index}}" bindtap='overScenedetail'>
+        <view class="yp_scene_img">
+          <image style="width:100%;height:100%;border-radius: 10rpx;" src="{{item.poster}}" mode="aspectFill"></image>
+        </view>
+        <view class="yp_scene_txt">
+          <view class="yp_scene_mname">
+            <text class="mname_title">{{item.movieName}}</text>
+            <text class="mname_kan" wx:if="{{item.activityType==1||item.activityType==3}}">砍</text>
+            <text class="mname_zeng" wx:if="{{item.activityType==2||item.activityType==3}}">赠</text>
+            <text class="mname_tuan" wx:if="{{item.activityType==4}}">团</text>
+          </view>
+          <view class="yp_scene_dtxt">排映场次(特殊影厅除外)</view>
+          <!-- <view class="yp_scene_opo">{{item.cinemaNum}}家影院在售</view> -->
+          <!-- <view class="yp_scene_money">
+            <text class="yp_redtxt">{{item.amount}}</text>元起</view> -->
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <block wx:if="{{cinameList==''}}">
+    <view class='zanwu-img'>
+      <image style='width:100%;height:100%;' mode="aspectFit" lazy-load="true" src='http://img.mockbird.top/1561570665498850.png'></image>
+    </view>
+    <view class='zanwu'>暂无进行中的场次</view>
+  </block>
+
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

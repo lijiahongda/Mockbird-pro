@@ -1,0 +1,69 @@
+/* pages/numshop/numshop.wxss */
+
+.shop_banner {
+  width: 100%;
+  height: 300rpx;
+}
+
+.shop_heder {
+  display: flex;
+  background: #fff;
+}
+
+.shop_nav {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 25rpx;
+}
+
+.shop_imaicon {
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.shop_imaicon image {
+  width: 100%;
+  height: 100%;
+}
+
+.shoplist_item {
+  margin-bottom: 20rpx;
+}
+
+.shop_textss {
+  line-height: 54rpx;
+}
+
+.shoplist_itemimg {
+  height: 180rpx;
+  padding: 0 80rpx;
+  position: relative;
+}
+
+.shoplist_itxta {
+  position: absolute;
+  top: 1rpx;
+  width: 190rpx;
+  height: 100rpx;
+  font-size: 35rpx;
+  font-weight: 600;
+  color: #fff;
+  line-height: 100rpx;
+}
+
+.shoplist_itxtb {
+  position: absolute;
+  bottom: 10rpx;
+  width: 190rpx;
+  height: 50rpx;
+  font-size: 25rpx;
+  font-weight: 600;
+  color: #fff;
+  line-height: 50rpx;
+}
+
+.shop_itemtxt {
+  line-height: 50rpx;
+  margin-top: 15rpx;
+}

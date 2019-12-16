@@ -1,0 +1,53 @@
+/* pages/lookcode/lookcode.wxss */
+
+.code_box {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.cope_code{
+  font-size: 24rpx;
+  line-height: 50rpx;
+  color: #0000FF;
+}
+
+.oder_title {
+  font-size: 32rpx;
+  line-height: 80rpx;
+  font-weight: 600;
+  color: #212128;
+}
+
+.oder_txt {
+  font-size: 26rpx;
+  line-height: 50rpx;
+  color: #6f7281;
+}
+
+.ct_title {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.ct_titleimg {
+  width: 60rpx;
+  height: 28rpx;
+  margin-top: 10rpx;
+}
+
+.ct_titletxt {
+  font-size: 30rpx;
+  line-height: 52rpx;
+  font-weight: 600;
+  margin-left: 5rpx;
+}
+
+.ct_txt {
+  font-size: 24rpx;
+  text-indent: -15rpx;
+  margin-left: 1em;
+}
+
+.ct_padding {
+  padding: 10rpx 20rpx;
+}

@@ -1,0 +1,74 @@
+<view style='position:relative;width:100%;height:640rpx;'>
+  <video style='width:100%;height:100%;' id="myVideo" src="{{movieDetail.video}}" bindended></video>
+</view>
+<view style="width:100%;height:40rpx;background:#000;"></view>
+<view class="yp_movieto">
+  <view class="yp_movie_box">
+    <view class="yp_movie_dimage">
+      <image style="width:100%;height:100%;border-radius: 10rpx;" src="{{ movieDetail.picture }}" mode="aspectFill" lazy-load="true"></image>
+    </view>
+    <view class="yp_movie_dtext">
+      <view yp_title>{{ movieDetail.name }}</view>
+      <view yp_title>{{ movieDetail.englishName }}</view>
+      <view class="yp_desc">{{ movieDetail.movieType }}</view>
+      <view class="yp_desc">{{ movieDetail.performer }}</view>
+      <view class="yp_desc">{{movieDetail.estimateReleaseTime}}</view>
+      <view class="yp_desc">{{ movieDetail.duration }}/{{ movieDetail.showType }}</view>
+    </view>
+  </view>
+  <view class="bg-white padding">
+    <view>{{movieDetail.synopsis}}</view>
+  </view>
+</view>
+
+<!-- 演职人员 -->
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">演职人员</view>
+</view>
+<view class="bg-white" style='padding:5rpx;'>
+  <scroll-view class="contenta" scroll-x="true">
+    <view class="innera">
+      <view wx:for="{{ rolesPics }}" wx:key="{{item}}">
+        <view class="movie-item">
+          <image wx:if="{{item.img}}" src="{{item.img}}" mode="aspectFill" lazy-load="true" />
+        </view>
+        <view class='opy'>{{ item.name }}</view>
+        <view class='opy'>{{ item.role }}</view>
+      </view>
+    </view>
+    <view>暂无数据</view>
+  </scroll-view>
+</view>
+<view class="bg-white padding">
+  <view class='text-center mockbird_txt_color' wx:if="{{rolesPics}}">全部{{rolesPics.length}}位演职人员</view>
+  <view class='text-center mockbird_txt_color' wx:if="{{rolesPics==null}}">暂无数据</view>
+</view>
+<!-- 视频剧照 -->
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action">视频剧照</view>
+</view>
+<view class="bg-white" style='padding:5rpx;'>
+  <scroll-view class="contentb" scroll-x="true">
+    <view class="innerb">
+      <view wx:for="{{ movieDetail.stillPicsList }}" wx:key="{{item}}">
+        <view class="movie-item_b">
+          <image wx:if="{{item}}" src="{{item}}" mode="aspectFill" lazy-load="true" />
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="bg-white padding">
+  <view class='text-center mockbird_txt_color' wx:if="{{movieDetail.stillPicsList}}">全部{{movieDetail.stillPicsList.length}}张剧照</view>
+  <view class='text-center mockbird_txt_color' wx:if="{{movieDetail.stillPicsList==null}}">暂无数据</view>
+</view>
+
+<view class='cu-tabbar-height'></view>
+<view class='cu-tabbar-height'></view>
+
+
+
+
+<view class="yp_bom_mbtnbox">
+  <view class="yp_goshopbtn" bindtap='goScenelist'>参加观影</view>
+</view>

@@ -1,0 +1,45 @@
+<view class="yp_moviedetail">
+  <view class="yp_movielist_bg yp_movielist_bg_blur"></view>
+  <view class="bg_imga">
+    <image style="width:100%;height:100%;" mode="aspectFill" src="{{movieDetail.picture}}"></image>
+  </view>
+  <view class="yp_moviedimg">
+    <image style="width:100%;height:100%;border-radius:10rpx;" src="{{movieDetail.picture}}"></image>
+  </view>
+  <view class="yp_moviedtext">
+    <view class="yp_moviedtext_name">{{movieDetail.name}}</view>
+    <view class="yp_moviedtext_ename">{{movieDetail.englishName}}</view>
+    <view class="yp_moviedtext_sgg">{{movieDetail.movieType}}</view>
+    <view class="yp_moviedtext_scnum">{{movieDetail.estimateReleaseTime}}</view>
+  </view>
+</view>
+
+
+<scroll-view scroll-y class="bg-white" style="height:70vh;">
+  <view class='bnavigator bg-white' wx:for="{{scenedList}}" data-item="{{item}}" wx:key="{{index}}" bindtap="goScenedetail">
+    <view class='movie_list_box'>
+      <view class='movie_list_txtbox'>
+        <view>
+          <text class="item-title">{{item.alias}}</text>
+          <text class="mlname_kan" wx:if="{{item.activityType==1||item.activityType==3}}">砍</text>
+          <text class="mlname_zeng" wx:if="{{item.activityType==2||item.activityType==3}}">赠</text>
+          <text class="mlname_tuan" wx:if="{{item.activityType==4}}">团</text>
+        </view>
+        <view class='item-txt'>{{item.address}}</view>
+      </view>
+      <view class='movie_amount' style="margin-top: 45rpx;">
+        <text class="movie_amountx">{{item.amount}}</text>
+        <text class="movie_amountg">{{item.maxPrice}}元</text>
+      </view>
+    </view>
+    <view class='movie_list_x'></view>
+  </view>
+
+  <block wx:if="{{scenedList==''}}">
+    <view class='zanwu-img'>
+      <image style='width:100%;height:100%;' src='http://img.mockbird.top/1561570665498850.png'></image>
+    </view>
+    <view class='zanwu'>暂无进行中的场次</view>
+  </block>
+  <view class='cu-tabbar-height' wx:if="{{scenedList!=''}}"></view>
+</scroll-view>

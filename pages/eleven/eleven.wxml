@@ -1,0 +1,6 @@
+<view class="eleven_box">
+  <image class="eleven_image" src="http://img.mockbird.top/1572855990884148.jpg"></image>
+  <view class="eleven_btn">  
+    <image style="width:100%;height:100%;" bindtap="shopEleven" src="http://img.mockbird.top/1572863424994454.gif"></image>
+  </view>
+</view>

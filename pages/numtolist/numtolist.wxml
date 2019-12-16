@@ -1,0 +1,36 @@
+<view class="bg-white nav flex text-center coupon_nav">
+  <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{tabData}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{item}}
+  </view>
+</view>
+
+<scroll-view scroll-y>
+  <view class='numtodolist'>
+    <view class="numtodolist_box" wx:for="{{queryIncomelist}}" wx:key="{{item}}">
+      <view class="numtodolist_sery">
+        <view class="numtodolist_one" wx:if="{{TabCur==0}}">积分增加</view>
+        <view class="numtodolist_one" wx:if="{{TabCur==1}}">积分扣除</view>
+        <view class="numtodolist_two" wx:if="{{TabCur==0}}">每日福利-{{item.remark}}</view>
+        <view class="numtodolist_two" wx:if="{{TabCur==1}}">兑换-{{item.goodsDesc}}</view>
+      </view>
+      <view class="numtodolist_sery">
+        <view class="numtodolist_num" style="color:#65C07A;" wx:if="{{TabCur==0}}">+{{item.integralNum}}</view>
+        <view class="numtodolist_num" style="color:#E34D47;" wx:if="{{TabCur==1}}">-{{item.unitPrice}}</view>
+        <view class="numtodolist_time" wx:if="{{TabCur==0}}">{{item.addTime}}</view>
+        <view class="numtodolist_time" wx:if="{{TabCur==1}}">{{item.createTime}}</view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <!-- 暂无数据 -->
+  <view wx:if="{{queryIncomelist==''}}">
+    <view class='numzanwu-img'>
+      <image style='width:100%;height:100%;' src='http://img.mockbird.top/1561615872045371.png'></image>
+    </view>
+    <view class='zanwu'>暂无数据</view>
+  </view>
+
+
+</scroll-view>

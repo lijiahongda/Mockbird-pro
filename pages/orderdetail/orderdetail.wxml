@@ -1,0 +1,57 @@
+<view class="bg-white padding margin-top margin-bottom" style='position: relative;'>
+  <view class='oder_title'>{{oderDetail.movieName}}</view>
+  <view class='oder_txt'>排映场次(除特殊影厅)均可观看</view>
+  <view class='oder_txt'>{{oderDetail.cinemaName}}</view>
+  <view class='oder_txt'>{{oderDetail.address}}</view>
+</view>
+
+<view class="bg-white padding margin-top margin-bottom" style='position:relative;'>
+  <view class='oder_txt'>订单号：{{oderDetail.id== "null" ? "" :oderDetail.id}}</view>
+  <view class='oder_txt'>交易时间：{{oderDetail.createDate== "null" ? "" :oderDetail.createDate}}</view>
+  <view class='oder_txt'>交易流水号：{{oderDetail.jourNo== null ? "无" :oderDetail.jourNo}}</view>
+  <view class='oder_txt'>支付金额：{{oderDetail.amount== "null" ? "" :oderDetail.amount}}</view>
+  <view class='oder_txt' wx:if="{{oderDetail.couponPrice!='null'}}">优惠金额：{{ oderDetail.couponPrice }}</view>
+  <view class='oder_txt' wx:if="{{oderDetail.couponPrice=='null'}}">优惠金额：0.00</view>
+  <!-- <view class='oder_txt' wx:if="{{oderDetail.favor}}">优惠金额：{{ oderDetail.couponPrice }}</view>
+  <view class='oder_txt' wx:if="{{!oderDetail.favor&&oderDetail.discountType!=2}}">优惠金额：0.00</view>
+  <view class='oder_txt' wx:if="{{!oderDetail.favor&&oderDetail.discountType==2}}">优惠金额：{{oderDetail.couponPrice}}</view> -->
+  <view class='movie_btn_box' wx:if="{{oderDetail.payStatus==1}}">
+    <view class='movie-btn' bindtap='goPAYto'>立即支付</view>
+    <view class='movie-btnb' bindtap='getOutpay'>取消订单</view>
+  </view>
+  <!-- <view class='movie_btn_box' wx:if="{{oderDetail.status==3}}">
+    <view class='movie-btn' bindtap='goLookcode'>查看兑换码</view>
+  </view> -->
+  <view class='movie_btn_box' wx:if="{{oderDetail.status==3}}">
+    <view class='movie-btn' bindtap='goLookcode' style="margin-top: 120rpx;">查看兑换码</view>
+  </view>
+</view>
+
+<view class="bg-white padding margin-top" wx:if='{{oderDetail.discountType==2&&oderDetail.discountType==3}}'>
+  <view>
+    <text class="dd_zeng">赠</text>请观影日在领票处领取赠品</view>
+</view>
+
+<view class="bg-white padding">
+  <view class="oderd_cg mockbird_txt_color" wx:if="{{oderDetail.status==3}}">开团成功</view>
+  <button class="oderd_fx" open-type='share' wx:if="{{ctuserlist.length<3}}">发送给好友来参团</button>
+</view>
+
+
+<view class="padding" wx:if='{{ctuserlist!=null}}'>
+  <view style="width:285rpx;height:auto;margin:0 auto;">
+    <view class="cu-avatar round margin-left" wx:for="{{ctuserlist}}" wx:key="{{item}}">
+      <image class="arva_bgimg" src="{{item.imgUrl}}"></image>
+    </view>
+    <view class="cu-avatar round margin-left" wx:if="{{ctuserlist.length==1}}">
+      <text class="cuIcon-people"></text>
+    </view>
+    <view class="cu-avatar round margin-left" wx:if="{{ctuserlist.length==1||ctuserlist.length==2}}">
+      <text class="cuIcon-people"></text>
+    </view>
+  </view>
+</view>
+
+<view wx:if='{{ctuserlist!=null&&oderDetail.status<3}}' style="text-align:center;">{{ctuserlist[0].groupNum}}人成团,还差{{ctuserlist[0].groupNum-ctuserlist.length}}人,
+  <text class="text-red">剩余{{ctuserlist[0].endTime}}</text>
+</view>

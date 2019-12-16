@@ -1,0 +1,40 @@
+<!--pages/numshop/numshop.wxml-->
+<view class="shop_banner">
+  <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575432084656063.png"></image>
+</view>
+<view class="shop_heder">
+  <view class="shop_nav">
+    <view class="shop_imaicon">
+      <image src="http://img.mockbird.top/1575433925085641.png"></image>
+    </view>
+    <view class="shop_textss">
+      <text>积分</text>
+      <text style="color:#ff581e;margin-left: 10rpx;">{{totalNum}}</text>
+    </view>
+  </view>
+  <view class="shop_nav" bindtap="goNumtolist">
+    <view class="shop_imaicon">
+      <image src="http://img.mockbird.top/1575434654937676.png"></image>
+    </view>
+    <view class="shop_textss">
+      <text>积分明细</text>
+    </view>
+  </view>
+</view>
+
+<view class="cu-bar bg-white margin-top solid-bottom">
+  <view class="action text-black">热门推荐</view>
+</view>
+<view class="bg-white padding">
+  <view class="grid col-2 margin-top text-center">
+    <view class="shoplist_item" wx:for="{{goodlist}}" wx:key="{{item}}" data-item="{{item}}" bindtap="goShopnum">
+      <view class="shoplist_itemimg">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575435121839638.png"></image>
+        <view class="shoplist_itxta">{{item.goodsBrief}}</view>
+        <view class="shoplist_itxtb">{{item.goodsDesc}}</view>
+      </view>
+      <view class="shop_itemtxt">{{item.name}}</view>
+      <view> <text style="color:#ff581e;">{{item.unitPrice}}</text>积分 </view>
+    </view>
+  </view>
+</view>

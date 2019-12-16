@@ -1,0 +1,138 @@
+/* pages/ordergreat/ordergreat.wxss */
+
+.pay_statusbox {
+  display: flex;
+  width: 40%;
+  margin: 60rpx auto;
+  position: relative;
+}
+
+.pay_imgbox {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 10rpx 10rpx 0 0;
+}
+
+.order_txt {
+  line-height: 50rpx;
+}
+
+.par_title {
+  font-weight: 600;
+  font-size: 48rpx;
+  background: linear-gradient(to right, #ff8c19, #ff5d1d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.pay_piao {
+  width: 500rpx;
+  position: absolute;
+  bottom: -65rpx;
+  left: -3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  height: 35rpx;
+  margin: 0 auto;
+  line-height: 30rpx;
+  text-align: center;
+}
+
+.l_padding {
+  padding: 30rpx 0 0 30rpx;
+}
+
+.dd_zeng {
+  width: 40rpx;
+  height: 40rpx;
+  background: #f66;
+  display: inline-block;
+  border-radius: 10rpx;
+  line-height: 40rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 24rpx;
+  margin-right: 15rpx;
+}
+
+.yp_zfcg {
+  display: flex;
+  justify-content: center;
+  padding: 30rpx 10rpx 10rpx 10rpx;
+  position: relative;
+  height: 360rpx;
+  background: #fff;
+}
+
+.yp_zfcgimg {
+  width: 210rpx;
+  height: 290rpx;
+  position: relative;
+  z-index: 100;
+}
+
+.yp_zfcgtext {
+  width: 450rpx;
+  margin-left: 20rpx;
+  position: relative;
+  z-index: 100;
+  color: #000;
+}
+
+.yp_zfcgtext_name {
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+
+.yp_zfcgtext_ename {
+  font-size: 24rpx;
+  font-weight: 600;
+  line-height: 38rpx;
+}
+
+.yp_zfcgtext_sgg {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.yp_zfcgtext_scnum {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.ogreat_btn {
+  width: 170rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  background: linear-gradient(to right, #ff8c19, #ff5d1d);
+  color: #fff;
+  border-radius: 10rpx;
+  position: absolute;
+  bottom: 45rpx;
+  right: 25rpx;
+  z-index: 200;
+}
+.text-eg{
+  font-size: 60rpx;
+}
+.oderd_fx {
+  width: 80%;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  margin: 20rpx auto;
+  font-weight: 600;
+  border-radius: 10rpx;
+  background: linear-gradient(to right, #ff8c19, #ff5d1d);
+  color: #fff;
+}

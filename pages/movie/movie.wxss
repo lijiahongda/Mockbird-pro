@@ -1,0 +1,26 @@
+/* pages/movie/movie.wxss */
+
+.yp_movie_video {
+  width: 100%;
+  height: 450rpx;
+}
+
+.yp_movie_moviename {
+  width: 100%; /*需要配合宽度来使用*/
+  font-size: 25rpx;
+  line-height: 50rpx;
+  overflow: hidden; /*超出部分隐藏*/
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+  white-space: nowrap; /*规定段落中的文本不进行换行 */
+}
+
+.yp_jus {
+  justify-content: space-around;
+}
+
+.yp_movie_padding {
+  padding: 10rpx;
+  width: 47%;
+  margin-bottom: 10rpx;
+  border-radius: 10rpx;
+}

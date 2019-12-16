@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "usingComponents": {
+    "wux-input-number": "/mockui/components/input-number/index"
+  }
+}

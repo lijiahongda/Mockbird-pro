@@ -1,0 +1,59 @@
+/* pages/numtolist/numtolist.wxss */
+
+.coupon_nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.numtodolist {
+  width: 100%;
+  height: auto;
+  margin-top: 90rpx;
+}
+
+.numtodolist_box {
+  display: flex;
+  padding: 30rpx;
+  width: 100%;
+  height: 150rpx;
+  background: #fff;
+}
+
+.numtodolist_sery {
+  width: 50%;
+  height: 100%;
+}
+
+.numtodolist_one {
+  font-size: 30rpx;
+  color: #000;
+  text-align: left;
+  font-weight: 600;
+}
+
+.numtodolist_two {
+  font-size: 26rpx;
+  color: #999;
+  text-align: left;
+  margin-top: 20rpx;
+}
+
+.numtodolist_num {
+  font-size: 36rpx;
+  font-weight: 600;
+  text-align: right;
+}
+
+.numtodolist_time {
+  font-size: 26rpx;
+  color: #999;
+  text-align: right;
+  margin-top: 20rpx;
+}
+
+.numzanwu-img {
+  width: 260rpx;
+  height: 260rpx;
+  margin: 150rpx auto;
+}

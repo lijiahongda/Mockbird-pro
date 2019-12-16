@@ -1,0 +1,82 @@
+<!-- 过滤 -->
+<wxs module="numFr" src="../../filter/numFr.wxs"></wxs>
+<!--pages/share/share.wxml-->
+<view class='share_box'>
+  <image style='width:100%;height:100%;' src='http://img.mockbird.top/1563189140120235.png'></image>
+  <view class='share_title'>
+    <view class='share_gbox'>
+      <view class='share_img'>
+        <image src='{{usersharearva}}' style='width:100%;height:100%;border-radius:50%;'></image>
+      </view>
+      <text class='share_imgtxt'>{{usersharename}}</text>
+    </view>
+  </view>
+  <view class='share_movie'>
+
+    <view class="yp_share">
+      <view class="yp_shareimg">
+        <image style="width:100%;height:100%;border-radius:10rpx;" src="{{scenedList.picture}}"></image>
+      </view>
+      <view class="yp_sharetext">
+        <view class="yp_sharetext_name">{{scenedList.movieName}}</view>
+        <view class="yp_sharetext_ename">{{scenedList.englishName}}</view>
+        <view class="yp_sharetext_sgg">{{scenedList.playTime}}</view>
+        <view class="yp_sharetext_scnum">{{scenedList.alias}}</view>
+        <view class="yp_sharetext_scnum">{{scenedList.address}}</view>
+      </view>
+    </view>
+
+    <view class='share_paygo' wx:if='{{userBargainInfoVo.status==1&&isType==1&&isKan==0}}'>已砍0元,目前票价{{bargainActitvty.originalPrice}}元</view>
+    <view class='share_paygo' wx:if='{{userBargainInfoVo.status==2&&isType==1&&isKan==0}}'>已砍{{userBargainInfoVo.bargain.reducePrices}}元,目前票价{{numFr.getNum(bargainActitvty.originalPrice - userBargainInfoVo.total,2)}}元</view>
+    <view class='share_paygo' wx:if='{{userBargainInfoVo.status==2&&isType==1&&isKan==1}}'>已砍{{userBargainInfoVo.bargain.reducePrices}}元,目前票价{{numFr.getNum(bargainActitvty.originalPrice - userBargainInfoVo.total,2)}}元</view>
+
+    <view class='share_paygo' wx:if='{{isType==2&&cmoney!=0}}'>帮砍{{cmoney}}元</view>
+    <view class='share_paygo' wx:if='{{isType==2&&cmoney==0}}'>已砍{{userBargainInfoVo.bargain.reducePrices}}元,目前票价{{numFr.getNum(bargainActitvty.originalPrice - userBargainInfoVo.total,2)}}元</view>
+    <view class='kan_share_btn' bindtap='chaShare' wx:if='{{userBargainInfoVo.status==1&&isType==1}}'>砍一刀</view>
+    <view class='kan_share_btn' bindtap='chaShare' wx:if='{{isType==2&&!bkanOP&&userBargainInfoVo.status==2}}'>帮忙砍一刀</view>
+    <view class='kan_share_btn' bindtap='goOrder' wx:if='{{isType==1&&userBargainInfoVo.status==3}}'>{{bargainActitvty.floorPrice}}元去观影</view>
+    <view class='kan_share_btn' wx:if='{{isType==2&&userBargainInfoVo.status==3&&bkanOP==false}}'>来晚一步,已经砍完</view>
+    <view class='kan_share_btn' wx:if='{{isType==2&&bkanOP}}' bindtap='aSharegothare'>我也要低价观影</view>
+    <view class='kan_share_btn' bindtap='goOrder' wx:if='{{isType==1&&userBargainInfoVo.bargainDetails.length>=2&&userBargainInfoVo.status==2}}'>便宜一点是一点,去购买</view>
+    <view class='kan_share_btn' bindtap='goSharhare'>回首页</view>
+    <button class='go_share_btn' open-type='share' wx:if='{{isType==1&&userBargainInfoVo.status==2}}'>分享给好友,帮砍</button>
+  </view>
+</view>
+<view class='share_peoplenone' wx:if='{{userBargainInfoVo.bargainDetails==null}}'>
+  <view class='share_peoplenull'>还未有好友砍价!</view>
+  <image style='width:100%;height:100%' src='http://img.mockbird.top/1563354455528634.png'></image>
+</view>
+<view class='share_peopleblockt' wx:if='{{userBargainInfoVo.bargainDetails!=null}}'>
+  <image style='width:100%;height:100%' src='http://img.mockbird.top/1563417944995360.png'></image>
+  <view class='people_box_share'>
+    <view class='share_flex_list' wx:for='{{userBargainInfoVo.bargainDetails}}' wx:key='{{item}}'>
+      <view class='share_flex_lista'>{{index+1}}.</view>
+      <view class='people_box_arvai'>
+        <image style='width:100%;height:100%;border-radius:50%;' src='{{item.imgUrl}}'></image>
+      </view>
+      <view class='share_flex_listb'>{{item.userName}}</view>
+      <view class='share_flex_listc'>砍掉{{item.money}}元</view>
+    </view>
+  </view>
+</view>
+
+<view class='share_tips'>
+  <view class='share_tips_title'>—— 活动规则 ——</view>
+  <view class='share_tips_txt'>· 活动时间：该场次截止售卖前24小时;</view>
+  <view class='share_tips_txt'>· 活动发起后的有效时间：用户第一次砍价后24小时内有效;</view>
+  <view class='share_tips_txt'>· 每个用户每个场次只能参与一次活动;</view>
+  <view class='share_tips_txt'>· 分享后至少一个好友帮忙砍价，即可使用页面标的价购票;</view>
+  <view class='share_tips_txt'>· 用户仅可在有余票的场次发起砍价活动，若在用户发起砍价活动后该场次已无余票，该场次自动关闭并且活动失效;</view>
+  <view class='share_tips_txt'>· 砍价抵扣优惠与优惠券不可同时使用;</view>
+  <view class='share_tips_txt'>· 本次优惠活动最终解释权归北京亿品众合互联网科技有限公司所有;</view>
+</view>
+
+<!-- 登录 -->
+<view class="login_zhezhao" wx:if="{{ifLogin=='false'}}">
+  <view class="login_box">
+    <view class="login_header">您还未登录</view>
+    <button class="good_loginto" open-type="getUserInfo" bind:getuserinfo="getUserInfo">立即登录</button>
+    <button class="not_loginto" bindtap='editLogin'>暂不登录</button>
+    <view class="login_footer">请先进行登录操作</view>
+  </view>
+</view>

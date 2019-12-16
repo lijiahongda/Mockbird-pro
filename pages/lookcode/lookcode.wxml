@@ -1,0 +1,28 @@
+<view class="bg-white padding margin-top margin-bottom">
+  <view class='oder_title'>{{orderock.movieName}} 兑换券{{orderock.buyNum}}张</view>
+  <view class='oder_txt'>不限时段</view>
+  <view class='oder_txt'>{{orderock.cinemaName}}</view>
+  <view class='oder_txt'>{{orderock.address}}</view>
+</view>
+
+<view class="bg-white padding margin-top margin-bottom" style='position:relative;' wx:if="{{codelist!=''}}">
+  <view class="code_box" wx:for="{{codelist}}" wx:key="{{item}}">
+    <view class='oder_txt'>兑换码：{{item.ticketCode}}</view>
+    <view class="cope_code" bindtap="copyText" data-text="{{item.ticketCode}}">复制</view>
+  </view>
+</view>
+<view class="bg-white padding margin-top margin-bottom" style='position:relative;' wx:if="{{codelist==''}}">
+  <view>暂无兑换码</view>
+</view>
+
+<view class="bg-white padding">
+  <view class='text-left ct_title'>
+    <view class="ct_titleimg">
+      <image style="width:100%;height:100%;" src="http://img.mockbird.top/1568975293959552.png"></image>
+    </view>
+    <view class="ct_titletxt">流程</view>
+  </view>
+  <view class="guize_box">
+    <view class="text-left ct_padding ct_txt" wx:for="{{poRule}}" wx:key="{{index}}">{{item}}</view>
+  </view>
+</view>

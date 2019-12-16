@@ -1,0 +1,207 @@
+/* pages/share/share.wxss */
+
+.share_box {
+  width: 100%;
+  height: 420rpx;
+  position: relative;
+  margin-bottom: 530rpx;
+}
+
+.share_movie {
+  width: 90%;
+  height: auto;
+  background: #fff;
+  border: 1rpx soid #e6e6e6;
+  border-radius: 10rpx;
+  padding-bottom: 32rpx;
+  position: relative;
+  bottom: 160rpx;
+  left: 5%;
+}
+
+.share_title {
+  width: 100%;
+  position: absolute;
+  bottom: 165rpx;
+  height: auto;
+}
+
+.share_gbox {
+  width: 400rpx;
+  line-height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.share_img {
+  width: 60rpx;
+  height: 60rpx;
+  display: inline-block;
+  margin: 10rpx;
+}
+
+.share_imgtxt {
+  color: #fff;
+}
+
+.share_image_box {
+  width: 180rpx;
+  height: 240rpx;
+}
+
+.yp_share {
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 10rpx 10rpx 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.yp_shareimg {
+  width: 210rpx;
+  height: 290rpx;
+}
+
+.yp_sharetext {
+  width: 450rpx;
+  margin-left: 20rpx;
+}
+
+.yp_sharetext_name {
+  font-size: 36rpx;
+  font-weight: 600;
+  line-height: 50rpx;
+  margin-top: 20rpx;
+}
+
+.yp_sharetext_ename {
+  font-size: 24rpx;
+  font-weight: 600;
+  line-height: 38rpx;
+}
+
+.yp_sharetext_sgg {
+  font-size: 26rpx;
+  /* font-weight: Medium; */
+  line-height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.yp_sharetext_scnum {
+  font-size: 26rpx;
+  /* font-weight: Medium; */
+  line-height: 40rpx;
+  margin-top: 10rpx;
+}
+
+.share_paygo {
+  text-align: center;
+  margin: 5rpx auto;
+  font-size: 30rpx;
+}
+
+.kan_share_btn {
+  width: 60%;
+  line-height: 65rpx;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+  background: orange;
+  border-radius: 30rpx;
+  margin: 20rpx auto;
+  font-size: 32rpx;
+}
+
+.go_share_btn {
+  width: 60%;
+  line-height: 65rpx;
+  color: orange;
+  border: 1rpx solid orange;
+  text-align: center;
+  font-weight: 600;
+  background: #fff;
+  border-radius: 30rpx;
+  margin: 20rpx auto;
+  font-size: 32rpx;
+}
+
+.share_peoplenone {
+  width: 100%;
+  height: 240rpx;
+  padding: 5rpx 30rpx;
+  position: relative;
+}
+
+.share_peoplenull {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  line-height: 250rpx;
+  padding-right: 7%;
+}
+
+.share_peopleblockt {
+  width: 90%;
+  height: 500rpx;
+  /* padding: 5rpx 30rpx; */
+  margin: 0 auto;
+  position: relative;
+  background: #fff;
+}
+
+.people_box_share {
+  position: absolute;
+  width: 100%;
+  height: 400rpx;
+  top: 50rpx;
+  bottom: 50rpx;
+  padding: 30rpx 50rpx;
+  overflow-x: hidden;
+}
+
+.share_flex_list {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20rpx auto;
+}
+
+.people_box_arvai {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.share_flex_lista {
+  width: 7%;
+}
+
+.share_flex_listb {
+  width: 50%;
+  padding-left: 20rpx;
+}
+
+.share_flex_listc {
+  width: 30%;
+  text-align: right;
+}
+
+.share_tips {
+  background: #fff;
+  padding: 30rpx 50rpx 30rpx 50rpx;
+  color: #ff9019;
+  line-height: 45rpx;
+}
+
+.share_tips_title {
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 900;
+  margin-bottom: 35rpx;
+}
+
+.share_tips_txt {
+  font-size: 24rpx;
+  text-indent: -15rpx;
+  margin-left: 1em;
+}

@@ -1,0 +1,51 @@
+<view class="coupon_nav bg-white">
+  <view class="cu-form-group">
+    <input class="couinput" placeholder="请输入兑换码" value='{{modalMsg}}' bindinput='bindDHblur'></input>
+    <view class="cu-capsule" bindtap="ticketBind">
+      <view class="cuduihuan">
+        兑换
+      </view>
+    </view>
+  </view>
+</view>
+<scroll-view class="bg-white" scroll-y>
+  <view class='padding' style="margin-top:80rpx;">
+    <view class='coupon_item' wx:for="{{couponList}}" wx:key="index">
+      <image src='http://img.mockbird.top/1575944374359070.png' wx:if="{{TabCur==0}}" mode="aspectFill" lazy-load="true"></image>
+      <image src='http://img.mockbird.top/1561617689493536.png' wx:if="{{TabCur==1||TabCur==2}}" mode="aspectFill" lazy-load="true"></image>
+      <view class='coupon_box_left'>
+        <view wx:if="{{item.type==1}}" class='coupon_item_title'>代金券</view>
+        <view wx:if="{{item.type==2}}" class='coupon_item_title'>买一赠一抵扣券</view>
+        <view wx:if="{{item.type==3}}" class='coupon_item_title'>{{item.remark}}</view>
+        <view class="coupon_item_text" wx:if="{{item.type!=3}}">仅限于指定场次</view>
+        <view class="coupon_item_text" wx:if="{{item.type==3}}">仅限于芜湖地区的影院</view>
+        <view class="coupon_item_text">{{item.createDate}}~{{item.validDate}}</view>
+      </view>
+      <view class='coupon_box_right'>
+        <view wx:if="{{item.type==1}}" class='coupon_item_money'>
+          <text>{{item.favorNum}}</text>
+          <text>元</text>
+        </view>
+        <view wx:if="{{item.type==2}}" class='coupon_item_money'>买一赠一</view>
+        <view wx:if="{{item.type==3}}" class='coupon_item_moneyad'>双十一特惠</view>
+        <view class='coupon_status_img' wx:if="{{TabCur!=0}}">
+          <image src='http://img.mockbird.top/1561616028730065.png' wx:if="{{TabCur==1}}" mode="aspectFill"></image>
+          <image src='http://img.mockbird.top/1561615978916016.png' wx:if="{{TabCur==2}}" mode="aspectFill"></image>
+        </view>
+        <view>立即使用</view>
+      </view>
+    </view>
+    <view class="shixiao">查看失效券~</view>
+  </view>
+
+
+  <!-- 暂无数据 -->
+  <view wx:if="{{couponList==''}}">
+    <view class='zanwu-img'>
+      <image style='width:100%;height:100%;' src='http://img.mockbird.top/1561615872045371.png'></image>
+    </view>
+    <view class='zanwu'>您还没有优惠券呢!</view>
+  </view>
+
+
+</scroll-view>

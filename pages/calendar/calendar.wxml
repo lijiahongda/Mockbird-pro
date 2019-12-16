@@ -1,0 +1,173 @@
+<view class="UCenter-bg">
+  <view class="cu-avatar lg round yp_touava">
+    <image class="arva_bgimg" src="{{unickarvr}}"></image>
+  </view>
+  <view class='yp_user-names'>
+    <text style="font-size:30rpx;">今日已签到</text>
+    <view style="font-size:20rpx;">明日签到可获得10积分</view>
+  </view>
+  <view class="qian_btn">
+    <image src="http://img.mockbird.top/1575361597322387.png"></image>
+    <text>{{totalNum}}</text>
+  </view>
+</view>
+
+<!-- dao -->
+<view class="padding text-black bg-white shadow-warp radius cal_culist">
+  <view style="font-size: 30rpx;font-weight: 600;">本月已连续签到
+    <text style="color:#ff5d1d;">{{serialDay}}</text> 天,累计
+    <text style="color:#ff5d1d;">{{totalDay}}</text> 天
+  </view>
+  <!-- <scroll-view class="grid_oobox" scroll-x="true" enable-flex="true">
+      <view wx:for="{{10}}" class="ddcard bg-blue"></view>
+  </scroll-view> -->
+  <swiper style="height: 200rpx;margin-top: 10rpx;">
+    <swiper-item>
+      <!-- <view class="ddcard" wx:if="{{opera==1}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627837307141.png"></image>
+      </view> -->
+      <view class="ddcard" wx:if="{{totalDay<5}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627854546508.png"></image>
+      </view>
+      <view class="ddcard" wx:if="{{totalDay>=5}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627870143559.png"></image>
+      </view>
+      <!-- <view class="ddcard" wx:if="{{operb==1}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575626419454838.png"></image>
+      </view> -->
+      <view class="ddcard" wx:if="{{totalDay<7}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575626472915247.png"></image>
+      </view>
+      <view class="ddcard" wx:if="{{totalDay>=7}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575626498152313.png"></image>
+      </view>
+      <!-- <view class="ddcard" wx:if="{{operc==1}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627916752360.png"></image>
+      </view> -->
+      <view class="ddcard" wx:if="{{totalDay<10}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627932276013.png"></image>
+      </view>
+      <view class="ddcard" wx:if="{{totalDay>=10}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627953740375.png"></image>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <!-- <view class="ddcard" wx:if="{{operd==1}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575626947095671.png"></image>
+      </view> -->
+      <view class="ddcard" wx:if="{{serialDay<14}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627013716600.png"></image>
+      </view>
+      <view class="ddcard" wx:if="{{serialDay>=14}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627065814957.png"></image>
+      </view>
+      <!-- <view class="ddcard" wx:if="{{opere==1}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627986797345.png"></image>
+      </view> -->
+      <view class="ddcard" wx:if="{{serialDay<15}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575628004247837.png"></image>
+      </view>
+      <view class="ddcard" wx:if="{{serialDay>=15}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575628018025823.png"></image>
+      </view>
+      <!-- <view class="ddcard" wx:if="{{operf==1}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627108261181.png"></image>
+      </view> -->
+      <view class="ddcard" wx:if="{{serialDay<21}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627128107394.png"></image>
+      </view>
+      <view class="ddcard" wx:if="{{serialDay>=21}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627167667867.png"></image>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <!-- <view class="ddcard" wx:if="{{operg==1}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627655221496.png"></image>
+      </view> -->
+      <view class="ddcard" wx:if="{{serialDay<28}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627688411094.png"></image>
+      </view>
+      <view class="ddcard" wx:if="{{serialDay>=28}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627711963753.png"></image>
+      </view>
+      <!-- <view class="ddcard" wx:if="{{operh==1}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627758766601.png"></image>
+      </view> -->
+      <view class="ddcard" wx:if="{{serialDay<30}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627779884795.png"></image>
+      </view>
+      <view class="ddcard" wx:if="{{serialDay>=30}}">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575627794536282.png"></image>
+      </view>
+    </swiper-item>
+  </swiper>
+  <!-- <scroll-view class="grid_qdbox" scroll-x="true">
+    <view class="grid_itemwek" wx:for="{{30}}" wx:key="{{index}}">
+      <view class="grid_week">11/01</view>
+      <view class="grid_qiu">
+        <image style="width:100%;height:100%;" src="http://img.mockbird.top/1575456860502862.png"></image>
+        <text style="color:#ff5d1d;position:absolute;top:-2rpx;right:-72rpx;">------</text>
+      </view>
+      <view class="grid_buqian">补签</view>
+    </view>
+  </scroll-view> -->
+  <swiper class="date-choose-swiper" indicator-dots="{{false}}" current="{{swiperCurrent}}" bindchange="dateSwiperChange">
+    <block wx:for="{{dateList}}" wx:for-item="date" wx:key="date.id">
+      <swiper-item class="swiper-item">
+        <view class="dateday">
+          <block wx:for="{{date.days}}" wx:for-item="day" wx:key="{{day.id}}">
+            <view style="width:100%;height:100%;">
+              <view class="grid_week" wx:if="{{dateCurrentStr==day.id}}">今日</view>
+              <view class="grid_week" wx:if="{{dateCurrentStr!=day.id}}">{{dateMonth}}
+                <text>/</text>{{day.day}}</view>
+              <view class="grid_qiu">
+                <image style="width:100%;height:100%;" wx:if="{{day.status==0}}" src="http://img.mockbird.top/1575456860502862.png"></image>
+                <image style="width:100%;height:100%;" wx:if="{{day.status==1}}" src="http://img.mockbird.top/1575621729904476.png"></image>
+                <text style="color:#ff5d1d;position:absolute;top:-9rpx;right:-75rpx;overflow:hidden;width:80rpx;height:30rpx;">------</text>
+              </view>
+              <view class="grid_buqian" wx:if="{{tMonthu==date.month&&day.status==0&&day.id<dateCurrentStr&&signcard>0}}" data-item="{{day}}" bindtap="goQdbu">补签</view>
+            </view>
+          </block>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="dao_footer">
+    <view>补签卡
+      <text style="color:#ff5d1d;margin-right:5rpx;">{{signcard}}</text>张</view>
+    <view bindtap="goQdobj">签到规则</view>
+  </view>
+</view>
+
+<view class="bg-white margin-top-xl margin-bottom-xl shadow-lg radius cal_box">
+  <view style="font-size:30rpx;font-weight:600;margin-bottom:30rpx;padding:20rpx;color:#000;">做任务赚积分</view>
+  <view class="cal_list">
+    <view class="cal_listimg">
+      <image style="width:100%;height:100%" src="http://img.mockbird.top/1575425640239099.png"></image>
+    </view>
+    <view class="cal_listtxt">
+      <view style="color:#000;">分享订单</view>
+      <view style="font-size:20rpx;">可得5积分</view>
+    </view>
+    <view class="cal_btnd" wx:if="{{isShare==1}}">已分享</view>
+    <view class="cal_btn" bindtap="goshareorder" wx:if="{{isShare==0}}">去分享</view>
+  </view>
+  <view class="cal_list">
+    <view class="cal_listimg">
+      <image style="width:100%;height:100%" src="http://img.mockbird.top/1576218144678127.png"></image>
+    </view>
+    <view class="cal_listtxt">
+      <view style="color:#000;">瓜分红包(0/1)</view>
+      <view style="font-size:20rpx;">分享好友金额翻倍</view>
+    </view>
+    <view class="cal_btn" bindtap="goredbag">去瓜分</view>
+    <!-- <button class="cal_btn" open-type='share' >去邀请</button> -->
+  </view>
+</view>
+
+<!-- 签到 -->
+<view class="login_zhezhao" wx:if="{{isSign==0}}">
+  <view class="qiandao_box" bindtap="qDao">
+    <image style="width:100%;height:100%" src="http://img.mockbird.top/1575459419134255.png"></image>
+  </view>
+</view>
